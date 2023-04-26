@@ -35,7 +35,7 @@ def factorial(i):
 
 
 def factorial_1(i):
-    return i if i == 1 else factorial(i - 1) * i
+    return i if i == 1 else factorial_1(i - 1) * i
 
 # or
 
@@ -43,4 +43,4 @@ def factorial_1(i):
 def factorial_2(i):
     if i == 1:
         return i
-    return i * factorial(i - 1)
+    return i * factorial_2(i - 1)
