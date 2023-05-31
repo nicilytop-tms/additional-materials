@@ -11,3 +11,9 @@ class LoginOrPasswordWrong(Exception):
     def __init__(self):
         self.message = Messages.error_auth.value
         super().__init__(self.message)
+
+
+class LoginTooLong(Exception):
+    def __init__(self):
+        self.message = Messages.too_long_login.value
+        super().__init__(self.message)

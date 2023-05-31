@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Article</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: monospace;
+        }
+        header, footer {
+            padding: 20px;
+            text-align: center;
+            background-color: #4451d9;
+            color: white;
+        }
+        header h3 {
+            font-size: 32px;
+            font-weight: 100;
+        }
+        .content {
+            min-height: calc(100vh - (75px + 141px));
+        }
+        .content form {
+            max-width: 800px;
+            margin: 20px auto;
+            display: flex;
+            flex-direction: column;
+        }
+        .article-form__elem {
+            margin-bottom: 20px;
+            padding: 10px;
+        }
+        button.article-form__elem {
+            background-color: #efe16a;
+            width: 100px;
+            border-radius: 3px;
+            border: none;
+            color: #514b4b;
+            align-self: end;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h3>Hey! Here u can create you article!</h3>
+    </header>
+    <div class="content">
+        <form action="/article" class="article-form" method="post">
+            <input name="article_header" type="text" placeholder="Input header" class="article-form__elem">
+            <textarea name="article_content" cols="30" rows="10" class="article-form__elem"></textarea>
+            <button class="article-form__elem">Create!</button>
+        </form>
+    </div>
+    <footer>
+        <span>Directed by nicilytop..</span>
+    </footer>
+</body>
+</html>

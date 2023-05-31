@@ -9,3 +9,4 @@ class Messages(Enum):
     unidentified_operation = 'Unidentified operation selected!'
     enter_login_password = 'Enter your Login and password separated by a space: '
     enter_new_age = 'Enter new age: '
+    too_long_login = 'Your login is too long!'

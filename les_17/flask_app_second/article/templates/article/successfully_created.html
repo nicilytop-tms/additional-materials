@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Article</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: monospace;
+        }
+        header, footer {
+            padding: 20px;
+            text-align: center;
+            background-color: #4451d9;
+            color: white;
+        }
+        header h3 {
+            font-size: 32px;
+            font-weight: 100;
+        }
+        .content {
+            min-height: calc(100vh - (75px + 141px));
+        }
+        .container {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px;
+        }
+        .container a {
+            display: block;
+            text-decoration: none;
+            font-size: 20px;
+            color: #595959;
+            padding: 10px;
+            border-radius: 3px;
+            background-color: #d6d64b;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h3>Created successfully!</h3>
+    </header>
+    <div class="content">
+        <div class="container">
+            <a href="/article">Go home!</a>
+            <a href="/article/create-article">Create new article!</a>
+        </div>
+    </div>
+    <footer>
+        <span>Directed by nicilytop..</span>
+    </footer>
+</body>
+</html>
