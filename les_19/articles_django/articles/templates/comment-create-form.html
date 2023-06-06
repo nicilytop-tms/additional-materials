@@ -1,0 +1,8 @@
+{% extends 'form.html' %}
+
+{% block comment-create %}
+    <input name="user_name" type="text" placeholder="Name">
+    <textarea name="message" cols="30" rows="10" placeholder="Message"></textarea>
+    <input name="article_id" type="text" hidden value="{{ article.id }}">
+    <button>Create!</button>
+{% endblock %}

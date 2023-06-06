@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title %}{% endblock %}</title>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            font-family: "Comic Sans MS";
+        }
+        header {
+            padding: 20px;
+            background-color: #8e8e8e;
+        }
+        .container {
+            margin: 0 auto;
+            max-width: 800px;
+        }
+        .logo {
+            font-size: 34px;
+            text-decoration: none;
+            color: white;
+        }
+        .articles {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .article {
+            width: 40%;
+            min-width: 100px;
+            border: solid #8e8e8e;
+            box-shadow: #1b1b1b 2px 2px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .additional_content {
+            margin: 20px 0;
+        }
+        .comment {
+            border: solid;
+            margin: 10px 20px 0;
+            max-width: 350px;
+        }
+        .comment span {
+            display: block;
+            padding: 5px;
+        }
+        .comment span:first-child {
+            font-size: 18px;
+            font-weight: 700;
+            background: #888888;
+            color: white;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        form input, form button, form textarea {
+            font-family: fantasy;
+            margin: 10px 0;
+        }
+        form input, form textarea {
+            border: solid black;
+            border-radius: 0;
+            padding: 4px;
+        }
+        form input {
+            max-width: 140px;
+        }
+        form button {
+            align-self: end;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <a class="logo" href="/">BLOG</a>
+        </div>
+    </header>
+    <div class="container">
+        {% block articles %}
+        {% endblock %}
+        {% block article %}
+        {% endblock %}
+        {% block creation-form %}
+        {% endblock %}
+        {% block creation-success %}
+        {% endblock %}
+        {% block article-create %}
+        {% endblock %}
+    </div>
+    <footer class="footer"></footer>
+</body>
+</html>

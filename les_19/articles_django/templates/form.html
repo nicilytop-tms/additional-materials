@@ -1,0 +1,8 @@
+{% block creation-form %}
+    <form action="{{ action_path }}" method="post">
+        {% csrf_token %}
+
+        {% block article-create %}{% endblock %}
+        {% block comment-create %}{% endblock %}
+    </form>
+{% endblock %}
