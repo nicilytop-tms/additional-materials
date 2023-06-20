@@ -5,6 +5,7 @@ from les_17.flask_app_second.article.models import Article
 
 class ArticleService:
     session = None
+    model = Article
 
     @classmethod
     def get_article_template(cls):
@@ -16,7 +17,7 @@ class ArticleService:
             header = request.form['article_header']
             content = request.form['article_content']
 
-            article = Article(header=header, content=content)
+            article = cls.model(header=header, content=content)
             session.add(article)
             session.commit()
             return render_template('article/successfully_created.html')

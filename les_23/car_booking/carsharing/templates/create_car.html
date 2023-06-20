@@ -1,0 +1,18 @@
+{% extends 'index.html' %}
+
+{% block title %}
+    Car
+{% endblock %}
+
+{% block create_car %}
+    {% if success_message %}
+        {{ success_message }}
+    {% endif %}
+    <form action="/car/" method="post">
+        {% csrf_token %}
+        <input type="text" name="brand" placeholder="Brand">
+        <input type="text" name="model" placeholder="Model">
+        <input type="text" name="vin" placeholder="Vin">
+        <button>Create</button>
+    </form>
+{% endblock %}
