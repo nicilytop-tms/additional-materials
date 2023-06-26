@@ -9,11 +9,27 @@ class User(models.Model):
 class Brand(models.Model):
     name = models.CharField(max_length=255, unique=True)
 
+    image = models.ForeignKey('Image', on_delete=models.SET_NULL, null=True, blank=True, default=None)
+
+    def __str__(self):
+        return f'{self.name}'
+
+
+class Image(models.Model):
+    title = models.CharField(max_length=255)
+    url_image = models.ImageField(upload_to='autos')
+
+    def __str__(self):
+        return f'{self.title}'
+
 
 class AutoModel(models.Model):
     name = models.CharField(max_length=255, unique=True)
 
     brand = models.ForeignKey('Brand', on_delete=models.CASCADE)
+
+    def __str__(self):
+        return f'{self.brand} {self.name}'
 
 
 class Auto(models.Model):
@@ -28,3 +44,6 @@ class Auto(models.Model):
     auto_model = models.ForeignKey('AutoModel', on_delete=models.CASCADE)
 
     user = models.ForeignKey('User', on_delete=models.SET_NULL, null=True, default=None)
+
+    def __str__(self):
+        return f'{self.vin_code}'
