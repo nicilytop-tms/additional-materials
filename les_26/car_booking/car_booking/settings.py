@@ -38,6 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    # foreign libs
+    'rest_framework',
+
     # custom apps
     'carsharing',
 ]
