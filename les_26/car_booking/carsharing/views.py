@@ -2,6 +2,7 @@ from django.shortcuts import render
 
 from carsharing.forms import AutoForm
 from carsharing.models import Auto
+from carsharing.serializers import AutoSerializer
 
 
 def get_main_page(request):
@@ -20,13 +21,20 @@ def create_car(request):
         return render(request, 'create_car.html', context={'form': auto_form})
 
     elif request.method == 'POST':
-        auto_form = AutoForm(request.POST)
-        error = None
+        serializer = AutoSerializer(data=request.POST)
 
-        if auto_form.is_valid():
-            auto_form.save()
+        error = None
+        if serializer.is_valid():
+            serializer.save()
         else:
-            error = auto_form.errors
+            error = str(serializer.errors)
+        # auto_form = AutoForm(request.POST)
+        # error = None
+        #
+        # if auto_form.is_valid():
+        #     auto_form.save()
+        # else:
+        #     error = auto_form.errors
 
         return render(request, 'create_car.html', context={'success_message': 'Success!', 'error': error})
 
